@@ -3,6 +3,8 @@
 	
 <head>
 	<title>Star Blind Welfare Trust</title>
+	<link href="logo.jpg" rel="icon">
+    <link href="logo.jpg" rel="apple-touch-icon">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -298,9 +300,9 @@
 <br>
 
 <div class="button-group" style="padding-left: 550px;">
-    <a class="btn btn-primary" onclick="showPDF()">View Activities</a>
+    <a class="btn btn-primary" onclick="togglePDF()">View Activities</a>
     <a style="padding-left: 20px;"></a>
-    <a class="btn btn-secondary" href="servicepdf.pdf" download="servicepdf.pdf">Download</a>
+    <a class="btn btn-secondary" href="service.pdf" download="servicepdf.pdf">Download</a>
 </div>
 
 <!-- PDF Display Section -->
@@ -309,11 +311,17 @@
 </div>
 
 <script>
-function showPDF() {
-    document.getElementById("pdfFrame").src = "servicepdf.pdf"; // Load the PDF
-    document.getElementById("pdfContainer").style.display = "block"; // Show the container
-}
-</script>
+	function togglePDF() {
+		var pdfContainer = document.getElementById("pdfContainer");
+		var pdfFrame = document.getElementById("pdfFrame");
+		if (pdfContainer.style.display === "block") {
+			pdfContainer.style.display = "none"; // Hide the PDF container if it's visible
+		} else {
+			pdfFrame.src = "service.pdf"; // Set the PDF source
+			pdfContainer.style.display = "block"; // Show the PDF container
+		}
+	}
+	</script>
 
 <br>
 

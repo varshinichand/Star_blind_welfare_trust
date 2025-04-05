@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<title>Star Blind Welfare Trust</title>
+    <link href="logo.jpg" rel="icon">
+    <link href="logo.jpg" rel="apple-touch-icon">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -40,7 +42,7 @@
         color: black;
         font-size: 20px;
     }
-
+ 
     /* Link Styling */
     .nav-text {
         color: black !important;
@@ -69,7 +71,18 @@
     max-height: 400px; /* Adjust based on preference */
     object-fit: cover; /* Keeps aspect ratio */
     border-radius: 10px; /* Optional: rounded corners */
-}
+    }
+    .navbar-brand {
+        color: black !important;  /* Ensures the text color is black */
+        padding-left: 20px;  /* Retains the existing left padding */
+    }
+    .nav-link {
+        color: black !important; /* Ensures the text color is black */
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+    .nav-link:hover {
+        color: #DAA520 !important; /* Sets hover color to golden red (Dark Golden Rod) */
+    }
 
     
 
@@ -106,10 +119,10 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="service.html" class="nav-link">Service</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                <li class="nav-item "><a href="index.html" class="nav-link" style="color:black">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link" style="color:black">About</a></li>
+                <li class="nav-item"><a href="service.html" class="nav-link" style="color:black">Service</a></li>
+                <li class="nav-item"><a href="project.html" class="nav-link" style="color:black">Projects</a></li>
                 <li class="nav-item cta"><a href="donation.html" class="nav-link" style="color: black;">Donate</a></li>
             </ul>
         </div>
