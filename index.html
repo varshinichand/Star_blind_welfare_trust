@@ -258,6 +258,71 @@
 		</div>
 	</div>
 </section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-5">
+                <h2>Select Year for Report</h2>
+                <div class="form-group">
+                    <select id="yearSelect" class="form-control">
+                        <option value="">Choose a year</option>
+                        <option value="2007">2007</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2015">2015</option>
+                        <option value="2019">2019</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+						<option value="2022">2025</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="togglePDF()">View</button>
+                <button class="btn btn-secondary" onclick="downloadPDF()">Download</button>
+                <div id="pdfViewer" style="display:none; margin-top:20px;">
+                    <iframe id="pdfFrame" width="100%" height="500px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+	.btn {
+		margin: 5px;
+	}
+	
+</style>
+
+<script>
+	function togglePDF() {
+		var year = document.getElementById("yearSelect").value;
+		var pdfFrame = document.getElementById("pdfFrame");
+		var viewer = document.getElementById("pdfViewer");
+	
+		if(year) {
+			pdfFrame.src = "./" + year + ".pdf"; // Set the source of the PDF
+			viewer.style.display = viewer.style.display === 'none' ? 'block' : 'none'; // Toggle visibility
+		} else {
+			alert('Please select a year.');
+		}
+	}
+	
+	
+	function downloadPDF() {
+		var year = document.getElementById("yearSelect").value;
+		if (year) {
+			var link = document.createElement('a');  // Create a new <a> element
+			link.href = "./" + year + ".pdf";        // Set the href to the file path
+			link.download = year + ".pdf";           // Use the download attribute to specify the filename
+			document.body.appendChild(link);         // Append the link to the body
+			link.click();                            // Programmatically click the link to trigger the download
+			document.body.removeChild(link);         // Remove the link from the body
+		} else {
+			alert('Please select a year.');
+		}
+	}
+	
+	</script>
+	
 
 <br>
 <footer class="footer">
