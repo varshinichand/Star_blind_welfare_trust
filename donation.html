@@ -25,12 +25,27 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <style>
-    /* Center the QR code in the full screen */
+    /* QR Code Container */
     #qrcode-container {
-        
-        height:auto; /* Full viewport height */
-        padding-left: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;  /* Ensures background contrast */
+        border: 1px solid #ccc;  /* Optional: adds border for clarity */
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for depth */
+        border-radius: 10px;  /* Optional: rounds corners of the container */
     }
+
+    /* QR Code Image */
+    .qr-code-img {
+        width: auto;  /* Allows natural aspect ratio */
+        max-width: 100%;  /* Restricts width to prevent overflow */
+        max-height: 100%;  /* Restricts height to prevent overflow */
+        object-fit: contain;  /* Ensures the image does not distort */
+    }
+
+
     .custom-navbar {
         background-color: white;
         padding: 10px 0;
@@ -146,41 +161,8 @@
                     </div>
                     <form action="#" class="appointment">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Full Name</label>
-                                    <div class="input-wrap">
-                                        <div class="icon"><span class="fa fa-user"></span></div>
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Email Address</label>
-                                    <div class="input-wrap">
-                                        <div class="icon"><span class="fa fa-paper-plane"></span></div>
-                                        <input type="email" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Amount</label>
-                                    <div class="input-wrap">
-                                        <div class="icon"><span class="fa fa-money"></span></div>
-                                        <input type="text" class="form-control" placeholder="0">
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="Screenshot 2025-04-03 192253.png" alt="Scan QR Code to Donate" width="150" height="150" style="margin-left: 110px;">
+                            <img src="Screenshot 2025-04-03 192253.png" alt="Donate QR Code" class="qr-code-img">
 
-
-                            <div class="col-md-12">
-                                <div class="form-group" style="padding-top: 10px;">
-                                    <input type="submit" value="Scan the QR and Donate" class="btn btn-secondary py-3 px-4">
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
@@ -193,7 +175,8 @@
         </div>
     </div>
 </section>
-
+<br>
+<br>
 <footer class="footer">
 	<div class="container">
 		<div class="row">
